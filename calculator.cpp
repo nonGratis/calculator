@@ -14,3 +14,11 @@ int Calculator::Mul (double a, double b)
 {
     return a * b + 0.5;
 }
+
+double Calculator::Divide(double a, double b)
+{
+    if (b == 0) {
+        throw std::invalid_argument("Division by zero isnt allowed");
+    }
+    return a / b + 0.5;
+}
