@@ -1,0 +1,10 @@
+builddir = build
+
+build build/calculator.o: cxx_compiler calculator.cpp
+build build/main.o: cxx_compiler main.cpp
+
+build build/libcalculator.a: ar_static_library build/calculator.o
+
+build build/calculator_app: link_executable build/main.o build/libcalculator.a
+
+default build/calculator_app

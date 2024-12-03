@@ -1,0 +1,11 @@
+rule cxx_compiler
+  command = g++ -std=c++11 -Wall $DEFINES $INCLUDES -c $in -o $out
+  description = Compiling CXX object $out
+
+rule ar_static_library
+  command = ar rcs $out $in
+  description = Creating static library $out
+
+rule link_executable
+  command = g++ $in -o $out -L. -lcalculator
+  description = Linking executable $out
